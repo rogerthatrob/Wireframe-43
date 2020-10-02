@@ -1,4 +1,5 @@
 # Rally X
+import pgzrun
 from pygame import image, Color
 
 car = Actor('car', center=(300, 300))
@@ -7,7 +8,7 @@ mapx = -100
 mapy = 0
 directionMap = {0:(0,1), 90:(1,0), 180:(0,-1), 270:(-1,0)}
 speed = 5
-collisionmap = image.load('images/collisionmap.png')
+collisionmap = image.load('source-code-rally-x\images\collisionmap.png')
 count = gameStatus = 0
 flagsXY=[(200,1900),(300,1100),(300,300),(400,600),(600,1600),(800,350)]
 flags = []
@@ -65,3 +66,5 @@ def drawMiniMap():
         if not flags[f].collected:
             flagRect = Rect((600+(flagsXY[f][0]/5),150+(flagsXY[f][1]/5)),(4,4))
             screen.draw.filled_rect(flagRect,(255,255,0))
+
+pgzrun.go()
